@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN</title>
+    <style>
+        .container{
+            margin: 20% auto;
+            background-color: bisque;
+            width: 30%;
+            padding: 2%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>PAN:</label>
+        <input id="pan" type="text" name="pan"><br><br>
+        <button onclick="validate()">Validate</button>
+    </div>
+    <script>
+        function validate(){
+            var pan=document.getElementById("pan").value;
+            const ref=/^([A-Z]){5,}([0-9]){4,}([A-Z]){1,}$/;
+            if(!ref.test(pan)){
+                alert("Invalid PAN");
+            }
+            else{
+              alert("Valid PAN");
+            }
+        }
+    </script>
+</body>
+</html>
